@@ -5,12 +5,9 @@ from time import sleep  # Import sleep to add a delay in the program.
 
 
 def main():
-    channel = int(input("Channel: "))  # Ask the user for the MCP3008 channel number.
-
     pot = MCP3008(
-        channel=channel,
-        max_voltage=5.0,
-    )  # Create an MCP3008 object for the specified channel.
+        channel=0, clock_pin=11, mosi_pin=10, miso_pin=9, select_pin=8
+    )  # Create an MCP3008 object for the potentiometer connected to channel 0.
 
     while True:
         value = pot.value
